@@ -1,0 +1,715 @@
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-jsxhint/node_modules/jsxhint/utils.js</title>
+    <meta charset="utf-8">
+    <style>
+        body, html {
+            margin:0; padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica;
+            font-size: 10pt;
+        }
+        div.header, div.footer {
+            background: #eee;
+            padding: 1em;
+        }
+        div.header {
+            height: 160px;
+            padding: 0 1em 0 1em;
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            border-bottom: 1px solid #666;
+            width: 100%;
+        }
+        div.footer {
+            border-top: 1px solid #666;
+        }
+        div.body {
+            margin-top: 170px;
+        }
+        div.meta {
+            font-size: 90%;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            font-weight: normal;
+        }
+        h1 {
+            font-size: 12pt;
+        }
+        h2 {
+            font-size: 10pt;
+        }
+        pre {
+            font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            tab-size: 2;
+        }
+
+        div.path { font-size: 110%; }
+        div.path a:link, div.path a:visited { color: #000; }
+        table.coverage { border-collapse: collapse; margin:0; padding: 0 }
+
+        table.coverage td {
+            margin: 0;
+            padding: 0;
+            color: #111;
+            vertical-align: top;
+        }
+        table.coverage td.line-count {
+            width: 50px;
+            text-align: right;
+            padding-right: 5px;
+        }
+        table.coverage td.line-coverage {
+            color: #777 !important;
+            text-align: right;
+            border-left: 1px solid #666;
+            border-right: 1px solid #666;
+        }
+
+        table.coverage td.text {
+        }
+
+        table.coverage td span.cline-any {
+            display: inline-block;
+            padding: 0 5px;
+            width: 40px;
+        }
+        table.coverage td span.cline-neutral {
+            background: #eee;
+        }
+        table.coverage td span.cline-yes {
+            background: #b5d592;
+            color: #999;
+        }
+        table.coverage td span.cline-no {
+            background: #fc8c84;
+        }
+
+        .cstat-yes { color: #111; }
+        .cstat-no { background: #fc8c84; color: #111; }
+        .fstat-no { background: #ffc520; color: #111 !important; }
+        .cbranch-no { background:  yellow !important; color: #111; }
+
+        .cstat-skip { background: #ddd; color: #111; }
+        .fstat-skip { background: #ddd; color: #111 !important; }
+        .cbranch-skip { background: #ddd !important; color: #111; }
+
+        .missing-if-branch {
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+            padding: 0 4px;
+            background: black;
+            color: yellow;
+        }
+
+        .skip-if-branch {
+            display: none;
+            margin-right: 10px;
+            position: relative;
+            padding: 0 4px;
+            background: #ccc;
+            color: white;
+        }
+
+        .missing-if-branch .typ, .skip-if-branch .typ {
+            color: inherit !important;
+        }
+
+        .entity, .metric { font-weight: bold; }
+        .metric { display: inline-block; border: 1px solid #333; padding: 0.3em; background: white; }
+        .metric small { font-size: 80%; font-weight: normal; color: #666; }
+
+        div.coverage-summary table { border-collapse: collapse; margin: 3em; font-size: 110%; }
+        div.coverage-summary td, div.coverage-summary table  th { margin: 0; padding: 0.25em 1em; border-top: 1px solid #666; border-bottom: 1px solid #666; }
+        div.coverage-summary th { text-align: left; border: 1px solid #666; background: #eee; font-weight: normal; }
+        div.coverage-summary th.file { border-right: none !important; }
+        div.coverage-summary th.pic { border-left: none !important; text-align: right; }
+        div.coverage-summary th.pct { border-right: none !important; }
+        div.coverage-summary th.abs { border-left: none !important; text-align: right; }
+        div.coverage-summary td.pct { text-align: right; border-left: 1px solid #666; }
+        div.coverage-summary td.abs { text-align: right; font-size: 90%; color: #444; border-right: 1px solid #666; }
+        div.coverage-summary td.file { text-align: right; border-left: 1px solid #666; white-space: nowrap;  }
+        div.coverage-summary td.pic { min-width: 120px !important;  }
+        div.coverage-summary a:link { color: #000; }
+        div.coverage-summary a:visited { color: #333; }
+        div.coverage-summary tfoot td { border-top: 1px solid #666; }
+
+        div.coverage-summary .yui3-datatable-sort-indicator, div.coverage-summary .dummy-sort-indicator {
+            height: 10px;
+            width: 7px;
+            display: inline-block;
+            margin-left: 0.5em;
+        }
+        div.coverage-summary .yui3-datatable-sort-indicator {
+            background: no-repeat scroll 0 0 transparent;
+        }
+        div.coverage-summary .yui3-datatable-sorted .yui3-datatable-sort-indicator {
+            background-position: 0 -20px;
+        }
+        div.coverage-summary .yui3-datatable-sorted-desc .yui3-datatable-sort-indicator {
+            background-position: 0 -10px;
+        }
+
+        .high { background: #b5d592 !important; }
+        .medium { background: #ffe87c !important; }
+        .low { background: #fc8c84 !important; }
+
+        span.cover-fill, span.cover-empty {
+            display:inline-block;
+            border:1px solid #444;
+            background: white;
+            height: 12px;
+        }
+        span.cover-fill {
+            background: #ccc;
+            border-right: 1px solid #444;
+        }
+        span.cover-empty {
+            background: white;
+            border-left: none;
+        }
+        span.cover-full {
+            border-right: none !important;
+        }
+        pre.prettyprint {
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .com { color: #999 !important; }
+        .ignore-none { color: #999; font-weight: normal; }
+
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1 style="font-weight: bold;">
+        <a href="https://github.com/npmtest/node-npmtest-jsxhint">npmtest-jsxhint (v0.0.1)</a>
+    </h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-jsxhint/node_modules/jsxhint/utils.js</span></h1>
+    <h2>
+        
+        Statements: <span class="metric">14.29% <small>(8 / 56)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Branches: <span class="metric">6.25% <small>(1 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Functions: <span class="metric">0% <small>(0 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Lines: <span class="metric">15.09% <small>(8 / 53)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-jsxhint/node_modules/jsxhint/</a> » utils.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tbody><tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+var Promise = require('bluebird');
+var fs = require('fs-extra');
+var path = require('path');
+var jshintcli = require('jshint/src/cli');
+var debug = require('debug')('jsxhint');
+var os = require('os');
+&nbsp;
+// Check map for copied support files (package.json, .jshintrc) for a speedup.
+var checkedSupportFiles = {};
+&nbsp;
+&nbsp;
+var utils = module.exports = {
+  /**
+   * Places all temp files here.
+   * @type {String}
+   */
+  tmpdir: path.join((os.tmpDir || <span class="branch-1 cbranch-no" title="branch not covered">os.tmpdir)</span>(), 'jsxhint', String(process.pid)),
+&nbsp;
+  /**
+   * Drain a readstream into a string.
+   * @param  {ReadableStream}   stream Readable stream.
+   * @promise {String} File contents.
+   */
+  drainStream: <span class="fstat-no" title="function not covered">function drainStream(stream) {</span>
+<span class="cstat-no" title="statement not covered">    return new Promise(<span class="fstat-no" title="function not covered">function(resolve, reject) {</span></span>
+      // Drain stream
+<span class="cstat-no" title="statement not covered">      var source = '';</span>
+<span class="cstat-no" title="statement not covered">      stream.on('data', <span class="fstat-no" title="function not covered">function(chunk){</span></span>
+<span class="cstat-no" title="statement not covered">        source += chunk;</span>
+      });
+<span class="cstat-no" title="statement not covered">      stream.on('end', <span class="fstat-no" title="function not covered">function() {</span></span>
+<span class="cstat-no" title="statement not covered">        resolve(source);</span>
+      });
+<span class="cstat-no" title="statement not covered">      stream.on('error', reject);</span>
+    });
+  },
+&nbsp;
+  /**
+   * Transforms a parse error into an object with 'file', 'error' properties so it can be fed back into jshint.
+   * @param  {Error} error Parsing error.
+   * @return {Object}      Object with filename and error that JSHint can read.
+   */
+  transformError: <span class="fstat-no" title="function not covered">function transformError(fileName, error, opts){</span>
+<span class="cstat-no" title="statement not covered">    var err = {</span>
+      file: fileName,
+      error: {
+        line: error.lineNumber,
+        character: error.column,
+        reason: error.description,
+        code: 'E041'
+      }
+    };
+<span class="cstat-no" title="statement not covered">    if (opts['--babel'] || opts['--babel-experimental']) {</span>
+<span class="cstat-no" title="statement not covered">      err.error.line = error.loc.line;</span>
+<span class="cstat-no" title="statement not covered">      err.error.character = error.loc.column;</span>
+<span class="cstat-no" title="statement not covered">      err.error.reason = error.stack.match(/.*:\s(.*)\s\(\d+:\d+\)/)[1];</span>
+    }
+<span class="cstat-no" title="statement not covered">    return err;</span>
+  },
+&nbsp;
+  /**
+   * Given a fileName, get a multi-platform compatible file path that can be appended to an existing filepath.
+   * This is not necessary on *nix but is important on Windows because absolutePath + absolutePath
+   * leads to the concatenation of a drive letter (`c:/`) which is a broken path.
+   * @param  {String} fileName file name.
+   * @return {String}          Cleaned file name.
+   */
+  getCleanAbsolutePath: <span class="fstat-no" title="function not covered">function getCleanAbsolutePath(fileName) {</span>
+<span class="cstat-no" title="statement not covered">    return '/' + path.relative('/', path.resolve(fileName));</span>
+  },
+&nbsp;
+  /**
+   * As of JSHint 2.5.0 there is a new jshintrc option, overrides. This lets you set glob patterns with separate
+   * rules. It's super useful, but it uses minimatch internally and doesn't match our temp files correctly.
+   * This function modifies the input patterns so they'll work right on our temp dirs.
+   * @param  {Object} jshintrc .jshintrc contents.
+   * @return {Object}          Modified .jshintrc contents.
+   */
+  ensureJshintrcOverrides: <span class="fstat-no" title="function not covered">function ensureJshintrcOverrides(jshintrc) {</span>
+<span class="cstat-no" title="statement not covered">    if (!jshintrc.overrides) <span class="cstat-no" title="statement not covered">return jshintrc;</span></span>
+<span class="cstat-no" title="statement not covered">    var base = path.join(utils.tmpdir, process.cwd());</span>
+<span class="cstat-no" title="statement not covered">    jshintrc.overrides = Object.keys(jshintrc.overrides).reduce(<span class="fstat-no" title="function not covered">function(memo, key) {</span></span>
+<span class="cstat-no" title="statement not covered">      memo[path.join(base, key)] = jshintrc.overrides[key];</span>
+<span class="cstat-no" title="statement not covered">      return memo;</span>
+    }, {});
+<span class="cstat-no" title="statement not covered">    return jshintrc;</span>
+  },
+&nbsp;
+  /**
+   * Find a config file, searching up from dir to the root, and copy it to the tmpdir. The
+   * JSHint CLI uses these to determine settings.
+   * We attempt to preserve the original folder structure inside the tmpdir
+   * so that we have no unexpected configuration file priority.
+   * @param  {String} dir Basename
+   * @param  {String} file Filename.
+   */
+  copyConfig: <span class="fstat-no" title="function not covered">function copyConfig(dir, file){</span>
+<span class="cstat-no" title="statement not covered">    var filePath = path.resolve(dir, file);</span>
+<span class="cstat-no" title="statement not covered">    if (checkedSupportFiles[filePath]) <span class="cstat-no" title="statement not covered">return;</span></span>
+    // Indicate that this is copied already to prevent unnecessary file operations.
+<span class="cstat-no" title="statement not covered">    checkedSupportFiles[filePath] = true;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (fs.existsSync(filePath)) {</span>
+<span class="cstat-no" title="statement not covered">      var destination = path.join(utils.tmpdir, utils.getCleanAbsolutePath(filePath));</span>
+<span class="cstat-no" title="statement not covered">      debug("Copying support file from %s to temp directory at %s.", filePath, destination);</span>
+<span class="cstat-no" title="statement not covered">      if (file === '.jshintrc') {</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">          var jshintrc = jshintcli.loadConfig(filePath);</span>
+<span class="cstat-no" title="statement not covered">          fs.writeJSONSync(destination, utils.ensureJshintrcOverrides(jshintrc));</span>
+        } catch(e) {
+<span class="cstat-no" title="statement not covered">          console.error('Unable to parse .jshintrc file at %s. It must be valid JSON. Error: %s', filePath, e.message);</span>
+<span class="cstat-no" title="statement not covered">          return;</span>
+        }
+      } else {
+<span class="cstat-no" title="statement not covered">        fs.copySync(filePath, destination);</span>
+      }
+    }
+    // Not found, keep looking up the root.
+    else {
+<span class="cstat-no" title="statement not covered">      var parent = path.resolve(dir, '..');</span>
+      // Return null at the root, which is also when dir and its parent are the same.
+<span class="cstat-no" title="statement not covered">      if (dir === parent) <span class="cstat-no" title="statement not covered">return;</span></span>
+<span class="cstat-no" title="statement not covered">      return copyConfig(parent, file);</span>
+    }
+  },
+&nbsp;
+  /**
+   * Given a filename and contents, write to disk.
+   * @private
+   * @param  {String}   fileName File name.
+   * @param  {String}   contents File contents.
+   */
+  createTempFile: <span class="fstat-no" title="function not covered">function createTempFile(fileName, contents){</span>
+<span class="cstat-no" title="statement not covered">    fileName = utils.getCleanAbsolutePath(fileName);</span>
+<span class="cstat-no" title="statement not covered">    var fileTempDestination = path.join(utils.tmpdir, fileName);</span>
+&nbsp;
+    // Write the file to the temp directory.
+    // outputFile is from fs-extra and will mkdirp() automatically.
+<span class="cstat-no" title="statement not covered">    fs.outputFileSync(fileTempDestination, contents);</span>
+&nbsp;
+    // For every file, we need to go up the path to find .jshintrc and package.json files, since
+    // they can modify the lint.
+<span class="cstat-no" title="statement not covered">    var dir = path.dirname(fileName);</span>
+<span class="cstat-no" title="statement not covered">    utils.copyConfig(dir, '.jshintrc');</span>
+<span class="cstat-no" title="statement not covered">    utils.copyConfig(dir, 'package.json');</span>
+<span class="cstat-no" title="statement not covered">    return fileTempDestination;</span>
+  },
+&nbsp;
+  /**
+   * Given a list of filenames and their contents, write temporary files
+   * to disk.
+   * @private
+   * @param  {Array}   fileNames    File names.
+   * @param  {Array}   fileContents File contents.
+   */
+  createTempFiles: <span class="fstat-no" title="function not covered">function createTempFiles(fileNames, fileContents){</span>
+<span class="cstat-no" title="statement not covered">    return fileNames.map(<span class="fstat-no" title="function not covered">function(fileName) {</span></span>
+<span class="cstat-no" title="statement not covered">      return utils.createTempFile(fileName, fileContents[fileNames.indexOf(fileName)]);</span>
+    });
+  }
+};
+&nbsp;
+&nbsp;</pre></td></tr>
+</tbody></table></pre>
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 18 2017 10:05:13 GMT+0000 (UTC)</div>
+</div>
+
+
+</body></html>
