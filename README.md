@@ -1,6 +1,6 @@
 # npmtest-jsxhint
 
-#### test coverage for  [jsxhint (v0.15.1)](https://github.com/STRML/JSXHint)  [![npm package](https://img.shields.io/npm/v/npmtest-jsxhint.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-jsxhint) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-jsxhint.svg)](https://travis-ci.org/npmtest/node-npmtest-jsxhint)
+#### basic test coverage for  [jsxhint (v0.15.1)](https://github.com/STRML/JSXHint)  [![npm package](https://img.shields.io/npm/v/npmtest-jsxhint.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-jsxhint) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-jsxhint.svg)](https://travis-ci.org/npmtest/node-npmtest-jsxhint)
 
 #### Wrapper for JSHint to allow hinting of JSX files
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-jsxhint/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-jsxhint/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-jsxhint/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-jsxhint/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-jsxhint/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-jsxhint/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-jsxhint/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-jsxhint/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-jsxhint/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-jsxhint/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-jsxhint/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-jsxhint/build/coverage.html/index.html)
 
