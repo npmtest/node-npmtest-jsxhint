@@ -58,7 +58,7 @@
 <tspan x="10" y="890">  │ │ │ └── defined@1.0.0 </tspan>
 <tspan x="10" y="906">  │ │ ├── glob@5.0.15 </tspan>
 <tspan x="10" y="922">  │ │ ├── graceful-fs@4.1.11 </tspan>
-<tspan x="10" y="938">  │ │ ├── iconv-lite@0.4.15 </tspan>
+<tspan x="10" y="938">  │ │ ├── iconv-lite@0.4.16 </tspan>
 <tspan x="10" y="954">  │ │ ├─┬ mkdirp@0.5.1 </tspan>
 <tspan x="10" y="970">  │ │ │ └── minimist@0.0.8 </tspan>
 <tspan x="10" y="986">  │ │ ├── private@0.1.7 </tspan>

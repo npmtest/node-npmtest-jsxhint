@@ -1,26 +1,26 @@
 <svg height="366" width="720" xmlns="http://www.w3.org/2000/svg">
 <rect height="366" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">  0.  2017-04-18 10:06:31 +0000    42784 bytes  .</tspan>
-<tspan x="10" y="42">  1.  2017-04-18 10:06:31 +0000     1078 bytes  LICENSE</tspan>
-<tspan x="10" y="58">  2.  2017-04-18 10:06:31 +0000     4660 bytes  README.md</tspan>
-<tspan x="10" y="74">  3.  2017-04-18 10:06:31 +0000     8074 bytes  cli.js</tspan>
-<tspan x="10" y="90">  4.  2017-04-18 10:06:31 +0000     4898 bytes  jsxhint.js</tspan>
-<tspan x="10" y="106">  5.  2017-04-18 10:06:31 +0000     2630 bytes  package.json</tspan>
-<tspan x="10" y="122">  6.  2017-04-18 10:06:31 +0000     1431 bytes  test/fixtures/jshint_parity.js</tspan>
-<tspan x="10" y="138">  7.  2017-04-18 10:06:31 +0000     1233 bytes  test/fixtures/test_article.js</tspan>
-<tspan x="10" y="154">  8.  2017-04-18 10:06:31 +0000     1235 bytes  test/fixtures/test_article.jsx</tspan>
-<tspan x="10" y="170">  9.  2017-04-18 10:06:31 +0000     1233 bytes  test/fixtures/test_article_without_pragma.js</tspan>
-<tspan x="10" y="186"> 10.  2017-04-18 10:06:31 +0000      164 bytes  test/fixtures/test_es6module.jsx</tspan>
-<tspan x="10" y="202"> 11.  2017-04-18 10:06:31 +0000      107 bytes  test/fixtures/test_es7classproperties.jsx</tspan>
-<tspan x="10" y="218"> 12.  2017-04-18 10:06:31 +0000      185 bytes  test/fixtures/test_es7exponentiation.jsx</tspan>
-<tspan x="10" y="234"> 13.  2017-04-18 10:06:31 +0000      144 bytes  test/fixtures/test_flow.js</tspan>
-<tspan x="10" y="250"> 14.  2017-04-18 10:06:31 +0000      180 bytes  test/fixtures/test_flow_import.js</tspan>
-<tspan x="10" y="266"> 15.  2017-04-18 10:06:31 +0000       33 bytes  test/fixtures/test_harmony.js</tspan>
-<tspan x="10" y="282"> 16.  2017-04-18 10:06:31 +0000      292 bytes  test/fixtures/test_malformed.js</tspan>
-<tspan x="10" y="298"> 17.  2017-04-18 10:06:31 +0000      156 bytes  test/fixtures/test_malformed.jsx</tspan>
-<tspan x="10" y="314"> 18.  2017-04-18 10:06:31 +0000       59 bytes  test/fixtures/test_overrides.js</tspan>
-<tspan x="10" y="330"> 19.  2017-04-18 10:06:31 +0000     9139 bytes  test/test.js</tspan>
-<tspan x="10" y="346"> 20.  2017-04-18 10:06:31 +0000     5853 bytes  utils.js</tspan>
+<tspan x="10" y="26">  0.  2017-04-25 11:05:13 +0000    42784 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-25 11:05:13 +0000     1078 bytes  LICENSE</tspan>
+<tspan x="10" y="58">  2.  2017-04-25 11:05:13 +0000     4660 bytes  README.md</tspan>
+<tspan x="10" y="74">  3.  2017-04-25 11:05:13 +0000     8074 bytes  cli.js</tspan>
+<tspan x="10" y="90">  4.  2017-04-25 11:05:13 +0000     4898 bytes  jsxhint.js</tspan>
+<tspan x="10" y="106">  5.  2017-04-25 11:05:13 +0000     2630 bytes  package.json</tspan>
+<tspan x="10" y="122">  6.  2017-04-25 11:05:13 +0000     1431 bytes  test/fixtures/jshint_parity.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-25 11:05:13 +0000     1233 bytes  test/fixtures/test_article.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-25 11:05:13 +0000     1235 bytes  test/fixtures/test_article.jsx</tspan>
+<tspan x="10" y="170">  9.  2017-04-25 11:05:13 +0000     1233 bytes  test/fixtures/test_article_without_pragma.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-25 11:05:13 +0000      164 bytes  test/fixtures/test_es6module.jsx</tspan>
+<tspan x="10" y="202"> 11.  2017-04-25 11:05:13 +0000      107 bytes  test/fixtures/test_es7classproperties.jsx</tspan>
+<tspan x="10" y="218"> 12.  2017-04-25 11:05:13 +0000      185 bytes  test/fixtures/test_es7exponentiation.jsx</tspan>
+<tspan x="10" y="234"> 13.  2017-04-25 11:05:13 +0000      144 bytes  test/fixtures/test_flow.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-25 11:05:13 +0000      180 bytes  test/fixtures/test_flow_import.js</tspan>
+<tspan x="10" y="266"> 15.  2017-04-25 11:05:13 +0000       33 bytes  test/fixtures/test_harmony.js</tspan>
+<tspan x="10" y="282"> 16.  2017-04-25 11:05:13 +0000      292 bytes  test/fixtures/test_malformed.js</tspan>
+<tspan x="10" y="298"> 17.  2017-04-25 11:05:13 +0000      156 bytes  test/fixtures/test_malformed.jsx</tspan>
+<tspan x="10" y="314"> 18.  2017-04-25 11:05:13 +0000       59 bytes  test/fixtures/test_overrides.js</tspan>
+<tspan x="10" y="330"> 19.  2017-04-25 11:05:13 +0000     9139 bytes  test/test.js</tspan>
+<tspan x="10" y="346"> 20.  2017-04-25 11:05:13 +0000     5853 bytes  utils.js</tspan>
 </text>
 </svg>
